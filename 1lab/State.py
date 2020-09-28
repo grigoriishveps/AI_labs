@@ -1,5 +1,4 @@
 import numpy as np
-from typing import Callable
 
 
 class TurnException(Exception):
@@ -28,6 +27,7 @@ class State:
         coord = np.where(array == 0)
         self.x = coord[0][0]
         self.y = coord[1][0]
+        self.final = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 0]])
 
     def has_left(self):
         return self.y != 0
@@ -76,6 +76,9 @@ class State:
             y = self.y
             new_grid[x][y], new_grid[x + 1][y] = new_grid[x + 1][y], new_grid[x][y]
             return State(new_grid)
+
+    def is_final(self):
+        return np.array_equal(self.grid, self.final)
 
     def __str__(self):
         return str(self.grid)
