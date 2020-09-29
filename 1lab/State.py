@@ -1,5 +1,5 @@
 import numpy as np
-
+from typing import Type
 
 class TurnException(Exception):
     def __init__(self, turn_name: str):
@@ -77,7 +77,11 @@ class State:
             return State(new_grid)
 
     def __eq__(self, other):
-        return np.array_equal(self.grid, other)
+        """
+        :param other: State object
+        :return: bool
+        """
+        return np.array_equal(self.grid, other.grid)
 
     def __str__(self):
         return str(self.grid)
