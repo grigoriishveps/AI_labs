@@ -1,15 +1,9 @@
-from typing import List
 from State import State
 import numpy as np
-import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from queue import Queue
 import time
-
-global_states = list()
 q = Queue()
-i = 0
-
 done = False
 final_state = State(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 0]]))
 state_hist = list()
