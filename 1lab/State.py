@@ -1,6 +1,7 @@
 import numpy as np
 from typing import Type
 
+
 class TurnException(Exception):
     def __init__(self, turn_name: str):
         super()
