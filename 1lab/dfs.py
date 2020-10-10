@@ -1,10 +1,13 @@
+def check_state(stack, state):
+
+
 
 def start_dfs(start, answer, with_pause):
     f = open('log.txt', 'w')
     history = [(start,"start")]
     print(start)
     if with_pause:
-        dfs_with_pause()
+        dfs_with_pause(start, answer, history)
     else:
         dfs_without_pause(start, answer, history)
     print("Длина истории" ,len(history))
@@ -31,6 +34,7 @@ def dfs_without_pause(state, answer, history):
             history.append((state, "end"))
             return True
         # проверка повтора узла
+
         for i in range(len(stack)-2, -1,-1):
             if stack[i][0] == state:
                 history.append((state, "repeat"))
@@ -71,13 +75,13 @@ def dfs_with_pause(state, answer, history):
         done = stack[-1][1]
         pred = stack[-1][2]
 
+
+
         if state == answer:
-            history.append((state, "end"))
             return True
         # проверка повтора узла
         for i in range(len(stack) - 2, -1, -1):
             if stack[i][0] == state:
-                history.append((state, "repeat"))
                 stack.pop()
                 break
         else:

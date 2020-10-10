@@ -4,15 +4,8 @@ from dfs import start_dfs
 
 if __name__ == '__main__':
     print("ready")
-    # a = np.array([[1, 2, 3], [4, 5, 6], [7, 0, 8]])
-    #a = np.array([[1, 2, 3], [4, 5, 6], [0, 7, 8]])
-    #a = np.array([[1, 2, 3], [0, 4, 5], [7, 8, 6]])
-    #light example
-    #a = np.array([[1, 2, 3], [4, 0, 6], [7, 5, 8]])
-    #common example
-    #a = np.array([[1, 2, 3], [6, 0, 8], [7, 5, 4]])
-    #hard example
-    a = np.array([[5, 8, 1], [0, 7, 2], [3, 6, 4]])
+
+    a = np.array([[5, 8, 3], [4, 0, 2], [7, 6, 1]])
     res = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 0]])
     state: State = State(a)
 
