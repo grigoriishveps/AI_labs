@@ -1,6 +1,7 @@
 import numpy as np
 from State import State
 from dfs import start_dfs
+from bfs import blind_search_bfs
 
 if __name__ == '__main__':
     print("ready")
@@ -13,11 +14,11 @@ if __name__ == '__main__':
     x = input("Для поиска в ширину введите - bfs, а для поиска в длину - dfs: ")
 
     if x == "bfs":
-        print("Здесь должен быть bfs", y)
+        res = blind_search_bfs([State(a)], State(res), y)
+        print("Result:", res, sep='\n')
     elif x == "dfs":
         start_dfs(State(a), State(res), y)
     else:
         print("Нет такого алгоритма")
 
-    #print_state(a)
-
+    # print_state(a)
