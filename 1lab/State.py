@@ -87,6 +87,9 @@ class State:
     def __hash__(self):
         return hash(bytes(self.grid))
 
+    def __repr__(self):
+        return repr(self.grid)
+
     def __str__(self):
         return str(self.grid)
 
