@@ -84,6 +84,9 @@ class State:
         """
         return np.array_equal(self.grid, other.grid)
 
+    def __hash__(self):
+        return hash(bytes(self.grid))
+
     def __str__(self):
         return str(self.grid)
 
