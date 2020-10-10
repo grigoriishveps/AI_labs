@@ -1,15 +1,13 @@
-from typing import List
-from State import State
-import numpy as np
 import time
-import os
+from typing import List
 
-global_states = list()
+import numpy as np
+
+from State import State
 
 
 def blind_search_bfs(stack: List[State]):
     final_state = State(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 0]]))
-    state_hist = list()
     hsh_tbl = {}
     i = 0
     while len(stack) != 0:

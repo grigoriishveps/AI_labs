@@ -1,6 +1,7 @@
 import numpy as np
 from typing import Type
 
+
 class TurnException(Exception):
     def __init__(self, turn_name: str):
         super()
@@ -82,6 +83,9 @@ class State:
         :return: bool
         """
         return np.array_equal(self.grid, other.grid)
+
+    def __hash__(self):
+        return hash(bytes(self.grid))
 
     def __str__(self):
         return str(self.grid)
